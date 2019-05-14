@@ -7,19 +7,19 @@ describe 'AeFastDecimalFormatter' do
 
   describe 'Precision greater than 0' do
     it 'small number with rounding up' do
-      expect(ae_fast_decimal_formatter(2.556, 2)).to eq('2.56')
+      expect(ae_fast_decimal_formatter(355.786, 2)).to eq('355.79')
     end
 
     it 'small number with rounding up at tricky value' do
-      expect(ae_fast_decimal_formatter(2.555, 2)).to eq('2.56')
+      expect(ae_fast_decimal_formatter(355.785, 2)).to eq('355.79')
     end
 
     it 'small number with rounding down at tricky value' do
-      expect(ae_fast_decimal_formatter(2.554, 2)).to eq('2.55')
+      expect(ae_fast_decimal_formatter(355.784, 2)).to eq('355.78')
     end
 
     it 'medium number without rounding' do
-      expect(ae_fast_decimal_formatter(1234.56, 2)).to eq('1,234.56')
+      expect(ae_fast_decimal_formatter(12347.56, 2)).to eq('12,347.56')
     end
 
     it 'large number without rounding' do
