@@ -14,4 +14,5 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ['>= 2.3.3', '< 2.7']
   s.licenses    = ['MIT']
   s.metadata['allowed_push_host'] = 'https://rubygems.org'
+  s.extensions = %w[ext/ae_fast_decimal_formatter/extconf.rb]
 end
