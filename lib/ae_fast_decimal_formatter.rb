@@ -1,0 +1,4 @@
+class AeFastDecimalFormatter
+end
+
+require "ae_fast_decimal_formatter/ae_fast_decimal_formatter"
