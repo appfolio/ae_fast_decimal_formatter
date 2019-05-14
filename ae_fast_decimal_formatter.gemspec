@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.email       = 'dev@appfolio.com'
   s.files       = [
     'lib/ae_fast_decimal_formatter.rb',
-    'ext/ae_fast_decimal_formatter/ae_fast_decimal_formatter.rb',
+    'ext/ae_fast_decimal_formatter/ae_fast_decimal_formatter.c',
     'ext/ae_fast_decimal_formatter/extconf.rb'
   ]
   s.homepage    = 'https://www.github.com/appfolio/ae_fast_decimal_formatter'
