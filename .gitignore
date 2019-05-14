@@ -1,3 +1,5 @@
 *.o
 *.log
 *.bundle
+Makefile
+Gemfile.lock
