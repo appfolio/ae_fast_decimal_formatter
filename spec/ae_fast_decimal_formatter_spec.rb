@@ -14,6 +14,10 @@ describe 'AeFastDecimalFormatter' do
       expect(ae_fast_decimal_formatter(355.785, 2)).to eq('355.79')
     end
 
+    it 'small number with rounding up at tricky value - take 2' do
+      expect(ae_fast_decimal_formatter(148.855, 2)).to eq('148.86')
+    end
+
     it 'small number with rounding down at tricky value' do
       expect(ae_fast_decimal_formatter(355.784, 2)).to eq('355.78')
     end
@@ -30,6 +34,10 @@ describe 'AeFastDecimalFormatter' do
   describe 'Precision is 0' do
     it 'small number' do
       expect(ae_fast_decimal_formatter(2.556, 0)).to eq('3')
+    end
+
+    it 'tricky case 1' do
+      expect(ae_fast_decimal_formatter(14885.5, 0)).to eq('14,886')
     end
 
     it 'large number' do

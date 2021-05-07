@@ -1,15 +1,38 @@
 #include <ruby.h>
 #include <float.h>
 
-VALUE c_format_decimal(double num, int precision)
-{
+double accurate_round_number(double num, int precision) {
+  double multiply_factor;
+
+  multiply_factor = pow(10.0, precision + 1);
+  long multiplied_number = (long) truncl(num * multiply_factor);
+  long digit_to_round = multiplied_number % 10;
+
+  if (digit_to_round < 5) {
+    if (multiplied_number > 0) {
+      multiplied_number -= digit_to_round;
+    } else {
+      multiplied_number += digit_to_round;
+    }
+  } else {
+    long adjustment_factor = 10 - digit_to_round;
+    if (multiplied_number > 0) {
+      multiplied_number += adjustment_factor;
+    } else {
+      multiplied_number -= adjustment_factor;
+    }
+  }
+
+  return multiplied_number/ multiply_factor;
+}
+
+VALUE c_format_decimal(double num, int precision) {
   char numstr[100];
   char str[DBL_MAX_10_EXP + 2];
   int numi, numlen, stri, strl;
   int maxp = 5, i;
   char formatstr[10];
   int digits_to_comma;
-  double rounding_factor, rounded_num;
 
   if (precision > maxp) { precision = maxp; }
   if (precision < 0) { precision = 0; }
@@ -17,16 +40,11 @@ VALUE c_format_decimal(double num, int precision)
   snprintf(formatstr, 10, "%%.%df", precision);
   formatstr[9] = 0;
 
-  if (precision > 0) {
-    rounding_factor = pow(10.0, precision);
-    rounded_num = round(num * rounding_factor) / rounding_factor;
-  } else {
-    rounded_num = round(num);
-  }
+  double rounded_number = accurate_round_number(num, precision);
 
   if (precision > 0) { precision++; } // adjust for .
 
-  numlen = snprintf(numstr, 100, formatstr, rounded_num);
+  numlen = snprintf(numstr, 100, formatstr, rounded_number);
   digits_to_comma = numlen - precision;
   if (numstr[0] == '-') { digits_to_comma--; }
 
