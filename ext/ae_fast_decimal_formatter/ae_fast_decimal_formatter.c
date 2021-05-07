@@ -6,7 +6,7 @@ double accurate_round_number(double num, int precision) {
 
   multiply_factor = pow(10.0, precision + 1);
   long multiplied_number = (long) truncl(num * multiply_factor);
-  long digit_to_round = multiplied_number % 10;
+  long digit_to_round = labs(multiplied_number) % 10;
 
   if (digit_to_round < 5) {
     if (multiplied_number > 0) {
