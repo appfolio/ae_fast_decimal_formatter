@@ -8,35 +8,20 @@ commands:
       - run: bundle exec rspec
 
 jobs:
-  test-ruby-233:
-    docker:
-      - image: circleci/ruby:2.3.3
-    steps:
-      - bundle_install_and_test
-
-  test-ruby-246:
-    docker:
-      - image: circleci/ruby:2.4.6
-    steps:
-      - bundle_install_and_test
-
-  test-ruby-255:
-    docker:
-      - image: circleci/ruby:2.5.5
-    steps:
-      - bundle_install_and_test
-
   test-ruby-263:
     docker:
       - image: circleci/ruby:2.6.3
+    steps:
+      - bundle_install_and_test
+  test-ruby-271:
+    docker:
+      - image: circleci/ruby:2.7.1
     steps:
       - bundle_install_and_test
 
 workflows:
   rc:
     jobs:
-      - test-ruby-233
-      - test-ruby-246
-      - test-ruby-255
       - test-ruby-263
+      - test-ruby-271
 
