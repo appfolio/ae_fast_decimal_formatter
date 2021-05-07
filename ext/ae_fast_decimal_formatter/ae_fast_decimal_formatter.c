@@ -18,8 +18,13 @@ VALUE c_format_decimal(double num, int precision)
   formatstr[9] = 0;
 
   if (precision > 0) {
-    rounding_factor = pow(10.0, precision);
-    rounded_num = round(num * rounding_factor) / rounding_factor;
+    rounding_factor = (double) 10.0;
+    for (i = 1; i < precision; i++) { rounding_factor *= (double) 10.0; }
+
+    double multiplied_num = num * (double) 10.0;
+    for (i = 1; i < precision; i++) { multiplied_num *= (double) 10.0; }
+
+    rounded_num = round(multiplied_num) / rounding_factor;
   } else {
     rounded_num = round(num);
   }
