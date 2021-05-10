@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
     'ext/ae_fast_decimal_formatter/extconf.rb'
   ]
   s.homepage    = 'https://www.github.com/appfolio/ae_fast_decimal_formatter'
-  s.required_ruby_version = ['>= 2.3.3', '< 2.7']
+  s.required_ruby_version = ['>= 2.6.3', '< 3']
   s.licenses    = ['MIT']
   s.metadata['allowed_push_host'] = 'https://rubygems.org'
   s.extensions = %w[ext/ae_fast_decimal_formatter/extconf.rb]
