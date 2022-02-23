@@ -1,18 +1,24 @@
-Gem::Specification.new do |s|
-  s.name        = 'ae_fast_decimal_formatter'
-  s.version     = '0.1.1'
-  s.summary     = 'Efficiently format decimal number'
-  s.description = 'Efficiently format decimal number so that reports of millions of decimal cells are fast'
-  s.authors     = ['Appfolio Inc.']
-  s.email       = 'dev@appfolio.com'
-  s.files       = [
-    'lib/ae_fast_decimal_formatter.rb',
-    'ext/ae_fast_decimal_formatter/ae_fast_decimal_formatter.c',
-    'ext/ae_fast_decimal_formatter/extconf.rb'
-  ]
-  s.homepage    = 'https://www.github.com/appfolio/ae_fast_decimal_formatter'
-  s.required_ruby_version = ['>= 2.6.3', '< 3']
-  s.licenses    = ['MIT']
-  s.metadata['allowed_push_host'] = 'https://rubygems.org'
-  s.extensions = %w[ext/ae_fast_decimal_formatter/extconf.rb]
+# frozen_string_literal: true
+
+require_relative 'lib/ae_fast_decimal_formatter/version'
+
+Gem::Specification.new do |spec|
+  spec.name                  = 'ae_fast_decimal_formatter'
+  spec.version               = AeFastDecimalFormatter::VERSION
+  spec.platform              = Gem::Platform::RUBY
+  spec.author                = 'AppFolio'
+  spec.email                 = 'opensource@appfolio.com'
+  spec.description           = 'Efficiently format decimal number.'
+  spec.summary               = spec.description
+  spec.homepage              = 'https://github.com/appfolio/ae_fast_decimal_formatter'
+  spec.license               = 'MIT'
+  spec.files                 = Dir['**/*'].select { |f| f[%r{^(lib/|ext/|LICENSE.txt|.*gemspec)}] }
+  spec.require_paths         = ['lib']
+  spec.extensions            = ['ext/ae_fast_decimal_formatter/extconf.rb']
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.6.3')
+
+  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
+
+  spec.add_dependency('addressable', ['>= 2.3.6', '< 3'])
+  spec.add_dependency('rack', ['>= 2.2.3', '< 3'])
 end
