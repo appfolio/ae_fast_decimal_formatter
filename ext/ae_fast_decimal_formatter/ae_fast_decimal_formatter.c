@@ -1,111 +1,59 @@
 #include <ruby.h>
 #include <float.h>
 
-VALUE c_format_decimal(double num, int precision)
-{
-  char numstr[100];
-  char str[DBL_MAX_10_EXP + 2];
-  int numi, numlen, stri, strl;
-  int maxp = 5, i;
-  char formatstr[10];
-  int digits_to_comma;
-  double rounding_factor, rounded_num;
+inline static char * long_to_formatted_string(long value, char *str, unsigned int strlen, unsigned int precision) {
+  char *p;
+  unsigned long v;
 
-  if (precision > maxp) { precision = maxp; }
-  if (precision < 0) { precision = 0; }
+  v = (value < 0) ? -value : value;
+  p = str + strlen - 1;
 
-  snprintf(formatstr, 10, "%%.%df", precision);
-  formatstr[9] = 0;
+  // Copy all the precision digits
+  for (unsigned int i = 0; i < precision; i++) {
+    *p-- = '0' + (v % 10);
+    v /= 10;
+  }
 
+  // Add the dot
   if (precision > 0) {
-    rounding_factor = (double) 10.0;
-    for (i = 1; i < precision; i++) { rounding_factor *= (double) 10.0; }
-
-    double multiplied_num = num * (double) 10.0;
-    for (i = 1; i < precision; i++) { multiplied_num *= (double) 10.0; }
-
-    rounded_num = round(multiplied_num) / rounding_factor;
-  } else {
-    rounded_num = round(num);
+    *p-- = '.';
   }
 
-  if (precision > 0) { precision++; } // adjust for .
+  // Copy all the digits, adding a comma every 3rd digit
+  int digits = 0;
+  do {
+    *p-- = '0' + (v % 10);
+    v /= 10;
 
-  numlen = snprintf(numstr, 100, formatstr, rounded_num);
-  digits_to_comma = numlen - precision;
-  if (numstr[0] == '-') { digits_to_comma--; }
-
-  strl = numlen + (digits_to_comma / 3);
-  if ((digits_to_comma % 3) == 0) {
-    strl--;
-  }
-
-  if (strncmp(numstr, "-0.00000", strl) == 0) {
-    return rb_str_new("0.00000", 1 + precision);
-  }
-
-  stri = strl;
-  str[stri] = 0;
-  for (i = 1; i <= (precision + 1); i++) {
-    str[stri - i] = numstr[numlen - i];
-  }
-
-  stri -= (precision + 2);
-  numlen -= (precision + 1);
-  numi = 1;
-
-  while ((numlen - numi) >= 1) {
-    if ((numi % 3) == 0) {
-      str[stri] = ',';
-      stri--;
+    if ((++digits % 3) == 0 && v) {
+      *p-- = ',';
     }
-    str[stri] = numstr[numlen - numi];
-    stri--;
-    numi++;
-  }
+  } while(v);
 
-  if (numstr[0] == '-') {
-    str[0] = '-';
-  } else {
-    if ((numi % 3) == 0) {
-      str[1] = ',';
-    }
-    str[0] = numstr[0];
-  }
-  return rb_str_new2(str);
+  // Finally, add the - if we started with a negative number
+  if (value < 0) *p-- = '-';
+
+  // And adjust the p to undo the last p--
+  p++;
+
+  return p;
 }
 
-struct ae_fast_decimal_formatter {
-  double num;
-  int precision;
-};
+// The function takes a value num (assumed to be fixnum) and value precision (assumed to be fixnum
+// between 0 and 5) and returns num as a formatted string.
+//
+// For example, given 100, 2 the function will output "1.00".
+// For example, given 123456, 2 the function will output "1,234.56".
+// For example, given -1234, 0 the function will output "-1,234".
+static VALUE ae_fast_decimal_formatter_format_long(VALUE self, VALUE num, VALUE precision) {
+  // The maximum length is 28 characters: 20 digits (assuming 64bits), 6 commas,
+  // negative sign, and a period. So we will always fit in 32 chars.
+  char buf[32];
+  char *numstr = long_to_formatted_string(NUM2LONG(num), buf, 32, NUM2UINT(precision));
 
-static void ae_fast_decimal_formatter_free(void *p) {}
-
-static VALUE ae_fast_decimal_formatter_alloc(VALUE klass) {
-  VALUE obj;
-  struct ae_fast_decimal_formatter *ptr;
-
-  obj = Data_Make_Struct(klass, struct ae_fast_decimal_formatter, NULL, ae_fast_decimal_formatter_free, ptr);
-
-  ptr->num = 0.0;
-  ptr->precision = 0;
-
-  return obj;
-}
-
-static VALUE ae_fast_decimal_formatter_init(VALUE self, VALUE number, VALUE precision) {
-  struct ae_fast_decimal_formatter *ptr;
-  Data_Get_Struct(self, struct ae_fast_decimal_formatter, ptr);
-  ptr->num = NUM2DBL(number);
-  ptr->precision = NUM2UINT(precision);
-  return self;
-}
-
-static VALUE ae_fast_decimal_formatter_format(VALUE self) {
-  struct ae_fast_decimal_formatter *ptr;
-  Data_Get_Struct(self, struct ae_fast_decimal_formatter, ptr);
-  return c_format_decimal(ptr->num, ptr->precision);
+  // The rb_str_new takes a pointer to a string and a length. It does not rely on
+  // null terminated strings.
+  return rb_str_new(numstr, 32 - (int)(numstr - buf));
 }
 
 void Init_ae_fast_decimal_formatter(void) {
@@ -113,7 +61,5 @@ void Init_ae_fast_decimal_formatter(void) {
 
   cFastDecimalFormatter = rb_const_get(rb_cObject, rb_intern("AeFastDecimalFormatter"));
 
-  rb_define_alloc_func(cFastDecimalFormatter, ae_fast_decimal_formatter_alloc);
-  rb_define_method(cFastDecimalFormatter, "initialize", ae_fast_decimal_formatter_init, 2);
-  rb_define_method(cFastDecimalFormatter, "format", ae_fast_decimal_formatter_format, 0);
+  rb_define_singleton_method(cFastDecimalFormatter, "format_long", ae_fast_decimal_formatter_format_long, 2);
 }

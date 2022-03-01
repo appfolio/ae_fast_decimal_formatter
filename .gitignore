@@ -3,6 +3,7 @@
 /doc/
 /pkg/
 /tmp/
+/.vscode/
 
 # Ignore generated files
 Gemfile.lock
