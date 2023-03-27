@@ -6,6 +6,10 @@
 
 **Merged pull requests:**
 
+- Updates for Ruby `2.7.7`, `3.1.3`, `3.2.1` [\#8](https://github.com/appfolio/ae_fast_decimal_formatter/pull/8) ([Maimer](https://github.com/Maimer))
+- Force the compiler to use c99 standard [\#7](https://github.com/appfolio/ae_fast_decimal_formatter/pull/7) ([pkmiec](https://github.com/pkmiec))
+- Add support for inputs of type string [\#6](https://github.com/appfolio/ae_fast_decimal_formatter/pull/6) ([pkmiec](https://github.com/pkmiec))
+- Optimize with less memory allocation and more efficient algorithm [\#5](https://github.com/appfolio/ae_fast_decimal_formatter/pull/5) ([pkmiec](https://github.com/pkmiec))
 - Appraise rubies 2.6.9, 2.7.5, 3.1.0, and Rails 7 [\#4](https://github.com/appfolio/ae_fast_decimal_formatter/pull/4) ([Maimer](https://github.com/Maimer))
 
 ## [v0.1.0](https://github.com/appfolio/ae_fast_decimal_formatter/tree/v0.1.0) (2019-05-14)
