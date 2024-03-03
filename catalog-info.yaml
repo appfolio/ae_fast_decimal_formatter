@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  title: ae_fast_decimal_formatter
+  description: Formats decimals, quickly. Probably not necessary anymore.
+  tags:
+    - oss
+  annotations:
+    appfolio.com/package-location: url:https://rubygems.org/gems/ae_fast_decimal_formatter
+    appfolio.com/package-type: gem
+  name: ae-fast-decimal-formatter
+spec:
+  type: library
+  lifecycle: maintenance
+  owner: bundle-bundle-bundle
