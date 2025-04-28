@@ -2,7 +2,21 @@
 
 ## [Unreleased](https://github.com/appfolio/ae_fast_decimal_formatter/tree/HEAD)
 
-[Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.3.0...HEAD)
+[Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.4.0...HEAD)
+
+**Merged pull requests:**
+
+- \[BANK-1370\] Update bundle file [\#12](https://github.com/appfolio/ae_fast_decimal_formatter/pull/12) ([Maimer](https://github.com/Maimer))
+- appraise ruby3.4 and rails 8.0 [\#11](https://github.com/appfolio/ae_fast_decimal_formatter/pull/11) ([tbarry16](https://github.com/tbarry16))
+- Add Backstage catalog metadata file\(s\) [\#10](https://github.com/appfolio/ae_fast_decimal_formatter/pull/10) ([modethirteen](https://github.com/modethirteen))
+
+## [v2.4.0](https://github.com/appfolio/ae_fast_decimal_formatter/tree/v2.4.0) (2025-04-28)
+
+[Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.3.0...v2.4.0)
+
+## [v2.3.0](https://github.com/appfolio/ae_fast_decimal_formatter/tree/v2.3.0) (2024-02-28)
+
+[Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v0.1.0...v2.3.0)
 
 **Merged pull requests:**
 
@@ -12,10 +26,7 @@
 - Add support for inputs of type string [\#6](https://github.com/appfolio/ae_fast_decimal_formatter/pull/6) ([pkmiec](https://github.com/pkmiec))
 - Optimize with less memory allocation and more efficient algorithm [\#5](https://github.com/appfolio/ae_fast_decimal_formatter/pull/5) ([pkmiec](https://github.com/pkmiec))
 - Appraise rubies 2.6.9, 2.7.5, 3.1.0, and Rails 7 [\#4](https://github.com/appfolio/ae_fast_decimal_formatter/pull/4) ([Maimer](https://github.com/Maimer))
-
-## [v2.3.0](https://github.com/appfolio/ae_fast_decimal_formatter/tree/v2.3.0) (2024-02-28)
-
-[Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v0.1.0...v2.3.0)
+- Avoid using pow to get rounding\_factor [\#3](https://github.com/appfolio/ae_fast_decimal_formatter/pull/3) ([mqchau](https://github.com/mqchau))
 
 ## [v0.1.0](https://github.com/appfolio/ae_fast_decimal_formatter/tree/v0.1.0) (2019-05-14)
 
