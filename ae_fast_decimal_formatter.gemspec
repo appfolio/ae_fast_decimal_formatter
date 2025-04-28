@@ -16,6 +16,6 @@ Gem::Specification.new do |spec|
   spec.require_paths         = ['lib']
   spec.extensions            = ['ext/ae_fast_decimal_formatter/extconf.rb']
 
-  spec.required_ruby_version = Gem::Requirement.new('< 3.4')
+  spec.required_ruby_version = Gem::Requirement.new('< 3.5')
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 end
