@@ -2,17 +2,27 @@
 
 ## [Unreleased](https://github.com/appfolio/ae_fast_decimal_formatter/tree/HEAD)
 
-[Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.4.0...HEAD)
+[Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.5.0...HEAD)
+
+**Merged pull requests:**
+
+- \[BANK-1738\] Update supported Ruby versions to 3.3.10, 3.4.8, 4.0.1 [\#15](https://github.com/appfolio/ae_fast_decimal_formatter/pull/15) ([Maimer](https://github.com/Maimer))
+- Configure NPM and Yarn to use custom NPM package repository [\#14](https://github.com/appfolio/ae_fast_decimal_formatter/pull/14) ([appfolio-sourcegraph-batch-changes[bot]](https://github.com/apps/appfolio-sourcegraph-batch-changes))
+- \[KNOW-154\]: Use CODEOWNERS to determine Developer Portal catalog ownership [\#13](https://github.com/appfolio/ae_fast_decimal_formatter/pull/13) ([modethirteen](https://github.com/modethirteen))
+
+## [v2.5.0](https://github.com/appfolio/ae_fast_decimal_formatter/tree/v2.5.0) (2026-03-06)
+
+[Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.4.0...v2.5.0)
+
+## [v2.4.0](https://github.com/appfolio/ae_fast_decimal_formatter/tree/v2.4.0) (2025-04-28)
+
+[Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.3.0...v2.4.0)
 
 **Merged pull requests:**
 
 - \[BANK-1370\] Update bundle file [\#12](https://github.com/appfolio/ae_fast_decimal_formatter/pull/12) ([Maimer](https://github.com/Maimer))
 - appraise ruby3.4 and rails 8.0 [\#11](https://github.com/appfolio/ae_fast_decimal_formatter/pull/11) ([tbarry16](https://github.com/tbarry16))
 - Add Backstage catalog metadata file\(s\) [\#10](https://github.com/appfolio/ae_fast_decimal_formatter/pull/10) ([modethirteen](https://github.com/modethirteen))
-
-## [v2.4.0](https://github.com/appfolio/ae_fast_decimal_formatter/tree/v2.4.0) (2025-04-28)
-
-[Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.3.0...v2.4.0)
 
 ## [v2.3.0](https://github.com/appfolio/ae_fast_decimal_formatter/tree/v2.3.0) (2024-02-28)
 
