@@ -5,6 +5,11 @@ on:
     branches:
       - main
       - master
+    paths:
+      - 'lib/**'
+      - 'ext/**'
+      - 'ae_fast_decimal_formatter.gemspec'
+      - 'LICENSE.txt'
 
 permissions:
   contents: write
