@@ -8,7 +8,13 @@
       "bump-minor-pre-major": false,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
-      "prerelease": false
+      "prerelease": false,
+      "include-paths": [
+        "lib/",
+        "ext/",
+        "ae_fast_decimal_formatter.gemspec",
+        "LICENSE.txt"
+      ]
     }
   },
   "changelog-sections": [
