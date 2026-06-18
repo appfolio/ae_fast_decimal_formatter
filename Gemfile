@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-source 'https://rubygems.org' # global source
+source 'https://appfolio.jfrog.io/artifactory/api/gems/appfolio-ae_fast_decimal_formatter-gem/'
 
-source 'https://rubygems.org' do
+source 'https://appfolio.jfrog.io/artifactory/api/gems/appfolio-ae_fast_decimal_formatter-gem/' do
   gem 'actionview', '>= 7.2', '< 8.2'
   gem 'activesupport', '>= 7.2', '< 8.2'
   gem 'appraisal', '>= 2.5', '< 3'

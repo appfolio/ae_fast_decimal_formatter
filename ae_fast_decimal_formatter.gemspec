@@ -17,5 +17,5 @@ Gem::Specification.new do |spec|
   spec.extensions            = ['ext/ae_fast_decimal_formatter/extconf.rb']
 
   spec.required_ruby_version = Gem::Requirement.new('< 4.1')
-  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
+  spec.metadata['allowed_push_host'] = 'https://appfolio.jfrog.io/artifactory/api/gems/appfolio-ae_fast_decimal_formatter-gem/'
 end
