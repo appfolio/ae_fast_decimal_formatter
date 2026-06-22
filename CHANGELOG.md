@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.5.1](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.5.0...v2.5.1) (2026-06-22)
+
+
+### Documentation
+
+* update changelog ([3be104a](https://github.com/appfolio/ae_fast_decimal_formatter/commit/3be104a0fb8fea3bf17b272a6b5930dd19afdf2e))
+
+
+### Miscellaneous Chores
+
+* migrate npm registry from CodeArtifact to JFrog ([e746a66](https://github.com/appfolio/ae_fast_decimal_formatter/commit/e746a66e5377c851db1e6a2c38cb395ed810d094))
+* rename @appfolio/platform-back-end to @appfolio/property-foundations in CODEOWNERS ([84da426](https://github.com/appfolio/ae_fast_decimal_formatter/commit/84da4263cf3c40c5e6915b07677bcdc1f90a4f96))
+
+
+### Build System
+
+* migrate gem source from RubyGems to JFrog ([4414c26](https://github.com/appfolio/ae_fast_decimal_formatter/commit/4414c26dc0d0649c55e8a2d43063e54ada3f896b))
+
+
+### Continuous Integration
+
+* add id-token permission for OIDC trusted publishing ([5d30158](https://github.com/appfolio/ae_fast_decimal_formatter/commit/5d3015855bb66f9198c9c6475368130c7f2599ba))
+* add id-token permission for OIDC trusted publishing ([4336184](https://github.com/appfolio/ae_fast_decimal_formatter/commit/4336184cff099cb0f0e67e8608cbe35b89626ab6))
+* add Release Please and gem-releaser workflows for automated releases ([b8a691c](https://github.com/appfolio/ae_fast_decimal_formatter/commit/b8a691c27e1365e83a06b4f033dd9f4ae950c694))
+* add Release Please and gem-releaser workflows for automated releases ([57c3fb5](https://github.com/appfolio/ae_fast_decimal_formatter/commit/57c3fb57f36cad934250f1208e1b120f30acfa81))
+* scope release workflow to gem-shipped files via paths filter ([7f51900](https://github.com/appfolio/ae_fast_decimal_formatter/commit/7f5190082c4f799076752f0422dc413da115b7dc))
+* scope release workflow to gem-shipped files via paths filter ([ff842ff](https://github.com/appfolio/ae_fast_decimal_formatter/commit/ff842ffcfc7246ee02daa708b269951b00b1002c))
+* scope release-please to gem-shipped files via include-paths ([8e9f399](https://github.com/appfolio/ae_fast_decimal_formatter/commit/8e9f3990a70022a8a78c700484240b464359d152))
+
 ## [Unreleased](https://github.com/appfolio/ae_fast_decimal_formatter/tree/HEAD)
 
 [Full Changelog](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.5.0...HEAD)
