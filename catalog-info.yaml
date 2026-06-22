@@ -6,7 +6,7 @@ metadata:
   tags:
     - oss
   annotations:
-    appfolio.com/package-location: url:https://rubygems.org/gems/ae_fast_decimal_formatter
+    appfolio.com/package-location: url:https://appfolio.jfrog.io/artifactory/api/gems/appfolio-ae_fast_decimal_formatter-gem/
     appfolio.com/package-type: gem
   name: ae-fast-decimal-formatter
 spec:
