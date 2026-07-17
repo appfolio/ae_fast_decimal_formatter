@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.platform              = Gem::Platform::RUBY
   spec.author                = 'AppFolio'
   spec.email                 = 'opensource@appfolio.com'
-  spec.description           = 'Efficiently format decimal number.'
-  spec.summary               = spec.description
+  spec.description           = 'Provides fast formatting of decimal numbers. Its performance advantage may no longer be necessary with modern Ruby.'
+  spec.summary               = 'Efficiently format decimal numbers.'
   spec.homepage              = 'https://github.com/appfolio/ae_fast_decimal_formatter'
   spec.license               = 'MIT'
   spec.files                 = Dir['**/*'].select { |f| f[%r{^(lib/|ext/|LICENSE.txt|ae_fast_decimal_formatter\.gemspec)}] }
