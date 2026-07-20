@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.2](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.5.1...v2.5.2) (2026-07-17)
+
+
+### Miscellaneous Chores
+
+* migrate catalog-info.yaml metadata into gemspec for gemspec catalog ingestor ([e623905](https://github.com/appfolio/ae_fast_decimal_formatter/commit/e623905625e4cd390a44b9e935a7a173a7b157c0))
+
 ## [2.5.1](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.5.0...v2.5.1) (2026-06-22)
 
 
