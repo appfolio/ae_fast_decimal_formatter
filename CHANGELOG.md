@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.3](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.5.2...v2.5.3) (2026-08-03)
+
+
+### Bug Fixes
+
+* revert change to allowed push host ([7c37341](https://github.com/appfolio/ae_fast_decimal_formatter/commit/7c373410ccff3579105c5f0131fa7b56a8b1bd81))
+* revert change to allowed push host ([abfdb06](https://github.com/appfolio/ae_fast_decimal_formatter/commit/abfdb0658121bb72c19e8853a2e31bb1f8d9d618))
+
 ## [2.5.2](https://github.com/appfolio/ae_fast_decimal_formatter/compare/v2.5.1...v2.5.2) (2026-07-17)
 
 
